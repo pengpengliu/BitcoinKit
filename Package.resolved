@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Base58",
+        "repositoryURL": "https://github.com/pengpengliu/Base58.git",
+        "state": {
+          "branch": "master",
+          "revision": "8f69c52c585733f0aa4c342a86beecdd7606fd82",
+          "version": null
+        }
+      },
+      {
+        "package": "Crypto101",
+        "repositoryURL": "https://github.com/pengpengliu/Crypto101.git",
+        "state": {
+          "branch": "master",
+          "revision": "35852848bb1fee050cbfc1515e10cb7558d19273",
+          "version": null
+        }
+      },
+      {
+        "package": "CryptoSwift",
+        "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "39f08ac5269361a50c08ce1e2f41989bfc4b1ec8",
+          "version": "1.3.1"
+        }
+      },
+      {
+        "package": "OpenSSL",
+        "repositoryURL": "https://github.com/pengpengliu/OpenSSL.git",
+        "state": {
+          "branch": null,
+          "revision": "9875fbc9d93e7827341913f50c203f8acd7b98d9",
+          "version": "2.2.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
