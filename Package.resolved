@@ -11,12 +11,30 @@
         }
       },
       {
+        "package": "BIP32",
+        "repositoryURL": "https://github.com/pengpengliu/BIP32.git",
+        "state": {
+          "branch": "master",
+          "revision": "431d18cc281944492d13e289a2a8f02669408902",
+          "version": null
+        }
+      },
+      {
+        "package": "BIP39",
+        "repositoryURL": "https://github.com/pengpengliu/BIP39.git",
+        "state": {
+          "branch": "master",
+          "revision": "e79bd90275e50643cf8f97208ffa536d0def3ec7",
+          "version": null
+        }
+      },
+      {
         "package": "Crypto101",
         "repositoryURL": "https://github.com/pengpengliu/Crypto101.git",
         "state": {
-          "branch": "master",
-          "revision": "35852848bb1fee050cbfc1515e10cb7558d19273",
-          "version": null
+          "branch": null,
+          "revision": "8b3dc3006eaa6a72add326912b9eccb277041699",
+          "version": "0.1.2"
         }
       },
       {
@@ -35,6 +53,15 @@
           "branch": null,
           "revision": "9875fbc9d93e7827341913f50c203f8acd7b98d9",
           "version": "2.2.3"
+        }
+      },
+      {
+        "package": "secp256k1",
+        "repositoryURL": "https://github.com/Boilertalk/secp256k1.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "823281fe9def21b384099b72a9a53ca988317b20",
+          "version": "0.1.4"
         }
       }
     ]

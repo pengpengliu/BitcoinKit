@@ -26,3 +26,24 @@ extension Bitcoin {
         }
     }
 }
+
+extension Bitcoin {
+    public struct Key {
+        public let priv: [UInt8]
+        public init(priv: [UInt8]) {
+            self.priv = priv
+        }
+        
+        public var pub: [UInt8] {
+            return ECC.Key(priv: self.priv).pub
+        }
+    }
+}
+
+extension Bitcoin {
+    public enum Crypto {
+        public static func hash160(bytes: [UInt8]) -> [UInt8]{
+            return Crypto101.Hash.sha256ripemd160(Data(bytes)).bytes
+        }
+    }
+}
