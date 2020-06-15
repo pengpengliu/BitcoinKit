@@ -2,11 +2,6 @@ import XCTest
 @testable import BitcoinKit
 
 final class BitcoinKitTests: XCTestCase {
-    func testExample() {
-        let hash160: [UInt8] = [0x8a, 0x06, 0xf0, 0xc6, 0x97, 0x58, 0xc2, 0x5a, 0x26, 0x72, 0xfc, 0xdf, 0xad, 0xdc, 0xc0, 0x81, 0x17, 0x18, 0xde, 0x75]
-        XCTAssertEqual(Bitcoin.Address.toBase58Check(hash160), "1DapZi8PsZfuah3vcaDJZnKrpg8xuqPfJX")
-    }
-
     func testBech32() {
         XCTAssertNoThrow(try Bech32().decode("A12UEL5L"))
         XCTAssertNoThrow(try Bech32().decode("a12uel5l"))
@@ -19,27 +14,30 @@ final class BitcoinKitTests: XCTestCase {
         XCTAssertEqual(try Bech32().decode("bc1q0dc0tycuky7550akpnd5y4zwedssjzrxnlv402").checksum.last, 6)
     }
     
-    func testAddress() {
-        let pubKeyHash: [UInt8] = [0x7b, 0x70, 0xf5, 0x93, 0x1c, 0xb1, 0x3d, 0x4a, 0x3f, 0xb6, 0x0c, 0xdb, 0x42, 0x54, 0x4e, 0xcb, 0x61, 0x09, 0x08, 0x66]
-        
-        XCTAssertEqual(Bitcoin.Address.toBase58Check(pubKeyHash), "1CFhS9JqPSkc2HJQpGR6CRcEHjyWvW8trj")
-        XCTAssertEqual(Bitcoin.Address.toBech32(pubKeyHash), "bc1q0dc0tycuky7550akpnd5y4zwedssjzrxnlv402")
-    }
-    
     func testKey() {
         let priv: [UInt8] = Array(hex: "e580512c800c6de3bd5e65695b4cab739211b7ac41ffc2991b0cf75c4d3ccbdf")
         let pub = Bitcoin.Key(priv: priv).pub
-        let hash = Bitcoin.Crypto.hash160(bytes: pub)
-        
         XCTAssertEqual(priv.hex, "e580512c800c6de3bd5e65695b4cab739211b7ac41ffc2991b0cf75c4d3ccbdf")
         XCTAssertEqual(pub.hex, "0254dec37f0858dd993798f8b31ba912eb3cee803ac4209596cc79c804a2f3c201")
-        XCTAssertEqual(Bitcoin.Address.toBase58Check(hash), "1CFhS9JqPSkc2HJQpGR6CRcEHjyWvW8trj")
-        XCTAssertEqual(Bitcoin.Address.toBech32(hash), "bc1q0dc0tycuky7550akpnd5y4zwedssjzrxnlv402")
+        XCTAssertEqual(Bitcoin.Address.toBase58Check(pub), "1CFhS9JqPSkc2HJQpGR6CRcEHjyWvW8trj")
+        XCTAssertEqual(Bitcoin.Address.toBech32(pub), "bc1q0dc0tycuky7550akpnd5y4zwedssjzrxnlv402")
+    }
+    
+    func testBitcoinAddress() {
+        let pubkey = "0254dec37f0858dd993798f8b31ba912eb3cee803ac4209596cc79c804a2f3c201"
+        XCTAssertEqual(Bitcoin.Address.toBase58Check(pubkey), "1CFhS9JqPSkc2HJQpGR6CRcEHjyWvW8trj")
+        XCTAssertEqual(Bitcoin.Address.toBech32(pubkey), "bc1q0dc0tycuky7550akpnd5y4zwedssjzrxnlv402")
+    }
+    
+    func testEthereumAddress() {
+        let pubkey = "54dec37f0858dd993798f8b31ba912eb3cee803ac4209596cc79c804a2f3c201c5c8c530ebd8af6cce71d1b2250dee29e660b1d10140226a7f5cbff46228de60"
+        XCTAssertEqual(Ethereum.Address.encode(pubkey), "0xF97dd426AffA7950167A1796Cb807Db885E26131")
     }
     
     static var allTests = [
-        ("testExample", testExample),
         ("testBech32", testBech32),
-        ("testAddress", testAddress),
+        ("testKey", testKey),
+        ("testBitcoinAddress", testBitcoinAddress),
+        ("testEthereumAddress", testEthereumAddress),
     ]
 }
