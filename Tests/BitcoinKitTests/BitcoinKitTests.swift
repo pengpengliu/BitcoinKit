@@ -1,4 +1,5 @@
 import XCTest
+import CryptoSwift
 @testable import BitcoinKit
 
 final class BitcoinKitTests: XCTestCase {
@@ -17,8 +18,8 @@ final class BitcoinKitTests: XCTestCase {
     func testKey() {
         let priv: [UInt8] = Array(hex: "e580512c800c6de3bd5e65695b4cab739211b7ac41ffc2991b0cf75c4d3ccbdf")
         let pub = Bitcoin.Key(priv: priv).pub
-        XCTAssertEqual(priv.hex, "e580512c800c6de3bd5e65695b4cab739211b7ac41ffc2991b0cf75c4d3ccbdf")
-        XCTAssertEqual(pub.hex, "0254dec37f0858dd993798f8b31ba912eb3cee803ac4209596cc79c804a2f3c201")
+        XCTAssertEqual(priv.toHexString(), "e580512c800c6de3bd5e65695b4cab739211b7ac41ffc2991b0cf75c4d3ccbdf")
+        XCTAssertEqual(pub.toHexString(), "0254dec37f0858dd993798f8b31ba912eb3cee803ac4209596cc79c804a2f3c201")
         XCTAssertEqual(Bitcoin.Address.toBase58Check(pub), "1CFhS9JqPSkc2HJQpGR6CRcEHjyWvW8trj")
         XCTAssertEqual(Bitcoin.Address.toBech32(pub), "bc1q0dc0tycuky7550akpnd5y4zwedssjzrxnlv402")
     }

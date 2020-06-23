@@ -15,9 +15,7 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
         .package(url: "https://github.com/pengpengliu/Base58.git", .branch("master")),
-        .package(url: "https://github.com/pengpengliu/BIP39.git", .branch("master")),
-        .package(url: "https://github.com/pengpengliu/BIP32.git", .branch("master")),
-        .package(url: "https://github.com/pengpengliu/Crypto101.git", .upToNextMinor(from: "0.1.2")),
+        .package(url: "https://github.com/pengpengliu/Crypto101.git", .upToNextMinor(from: "0.2.2")),
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .upToNextMinor(from: "1.3.1"))
     ],
     targets: [
