@@ -5,9 +5,9 @@
         "package": "Base58",
         "repositoryURL": "https://github.com/pengpengliu/Base58.git",
         "state": {
-          "branch": "master",
+          "branch": null,
           "revision": "8f69c52c585733f0aa4c342a86beecdd7606fd82",
-          "version": null
+          "version": "1.0.0"
         }
       },
       {
