@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/pengpengliu/Crypto101.git",
         "state": {
           "branch": null,
-          "revision": "be33c90b9da6c68dd1a96a0bb4c08f225a620dee",
-          "version": "0.2.2"
+          "revision": "a689271e95ed057fe315774b3ab89e081fc2279c",
+          "version": "0.3.0"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift.git",
         "state": {
           "branch": null,
-          "revision": "39f08ac5269361a50c08ce1e2f41989bfc4b1ec8",
-          "version": "1.3.1"
+          "revision": "5669f222e46c8134fb1f399c745fa6882b43532e",
+          "version": "1.3.8"
         }
       },
       {
